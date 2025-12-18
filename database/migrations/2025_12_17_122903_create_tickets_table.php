@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\StatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('customer_id');
             $table->string('theme');
             $table->text('text');
-            $table->enum('status', ['new', 'working', 'processed']);
+            $table->enum('status', StatusEnum::cases());
             $table->timestamp('answered_at')->nullable();
         });
     }

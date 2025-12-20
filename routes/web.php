@@ -13,15 +13,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/feedback-widget', 'feedback.widget');
+
 
 Route::get('/test', function () {
     $rez = '';
-
-    //$rez = Ticket::find(132)->getMedia();
-
-    $rez = User::find(4)->getRoleNames();
-
-    //$rez = Ticket::find(1)->getMedia()[1]->getUrl();
+    /*
+    $ticket = Ticket::find(15);
+    foreach($ticket->getMedia() as $file)
+        $rez .= $file->getUrl() . " ";
+    */
     dump($rez);
     return $rez;
 });

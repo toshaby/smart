@@ -1,0 +1,19 @@
+body{
+    background-color: white;
+}
+div.head{
+    color: black;
+    text-align: center;
+}
+div.form_field{
+    text-align: left;
+    padding: 10px 10px 10px 20px;
+}
+div.message.ok{
+    color: green;
+    padding-left: 20px;
+}
+div.message.error{
+    color:red;
+    margin-bottom: 5px;
+}

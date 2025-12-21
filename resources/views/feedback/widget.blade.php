@@ -6,7 +6,6 @@
     <body>
         <div class="form">
             <form action="{{ route('ticket.store') }}" method="post" id="widgetform">
-                @csrf
                 <div class="head">Оставьте свой отзыв</div>
                 <div class="message ok">&nbsp;</div>
                 <div class="form_field">
@@ -31,7 +30,7 @@
                 </div>
                 <div class="form_field">
                     <div class="message error">&nbsp;</div>
-                    <input type="file" name="files[]" multiple="multiple">
+                    <input type="file" name="files[]" multiple="multiple" accept=".jpg, .jpeg, .png, .gif, .doc, .docs, .pdf">
                 </div>
                 <div class="form_field">
                     <input type="submit" name="send">

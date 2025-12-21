@@ -11,8 +11,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/tickets', [WidgetController::class, 'store'])->middleware([
-    EncryptCookies::class,
-    StartSession::class,
-    ValidateCsrfToken::class
-])->name('ticket.store');
+Route::post('/tickets', [WidgetController::class, 'store'])->name('ticket.store');

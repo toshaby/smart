@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/feedback-widget', 'feedback.widget');
+Route::view('/feedback-widget', 'feedback.widget')->withoutMiddleware('web');
 
 
 Route::get('/test', function () {

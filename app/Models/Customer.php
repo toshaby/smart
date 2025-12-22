@@ -11,7 +11,7 @@ class Customer extends Model
     
     protected $guarded = [];
 
-    public function Tickets()
+    public function tickets()
     {
         return $this->hasMany(Ticket::class);
     }

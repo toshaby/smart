@@ -1,0 +1,154 @@
+div.head{
+    text-align: center;
+    color: #88ff88;
+}
+div.head h1{
+    display: inline-block;
+    border-bottom: 1px solid grey;
+}
+
+.alert.alert-danger .header{
+    font-weight: bold;
+    color:#aa0000;
+}
+
+.alert.alert-danger li{
+    color:red;
+}
+
+#startButton{
+    cursor:pointer;
+}
+
+div.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+div.main_left{
+    width:300px;
+    background-color: grey;
+}
+
+div.left_menu{
+    padding:10px;
+}
+div.left_menu a{
+    display:block;
+    background-color: green;
+    padding:10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #aa0000;
+}
+div.left_menu a:first-child{
+    margin-top: 0px;
+}
+div.left_menu a:hover{
+    background-color: #00aa00;
+}
+div.left_menu a.active{
+    background-color: grey;
+}
+
+div.main_content{
+    background-color: blanchedalmond;
+    flex-grow: 1;
+}
+
+div.main_right{
+    width:300px;
+    background-color: grey;
+}
+
+div.footer{
+    text-align: center;
+    color: #88ff88;
+}
+
+table.main_list{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.main_list td, table.main_list th{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table.main_list td{
+    text-align: left;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+.status_new td{
+    background-color: #ff8888;
+}
+.status_working td{
+    background-color: #ffff88;
+}
+.status_processed td{
+    background-color: #88ff88;
+}
+
+.filter{
+    padding:10px;
+    margin: 10px;
+}
+
+.relative{
+    position: relative;
+}
+
+.relative .error_message{
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    background-color: #ffaaaa;
+    color:red;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.inline{
+    display: inline;
+}
+
+/* detail page */
+.ticket_detail{
+    text-align: left;
+    padding: 10px;
+}
+.detail_item{
+    padding:5px;
+}
+.detail_name{
+    color: grey;
+}
+.detail_value{
+    color: black;
+}
+
+.ticket_detail.status_new{
+    background-color: #ff8888;
+}
+.ticket_detail.status_working{
+    background-color: #ffff88;
+}
+.ticket_detail.status_processed{
+    background-color: #88ff88;
+}
+
+/*auth*/
+.padding{
+    padding: 10px;
+}
+.alert.alert-danger{
+    color: red;
+}

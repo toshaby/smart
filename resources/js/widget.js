@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let undefinedErrors = [];
 
-        if (result.success) {
-            document.querySelector('.message.ok').innerHTML = result.message;
+        if (result.data) {
+            document.querySelector('.message.ok').innerHTML = 'Тикет №' + result.data.id + ' успешно создан';
             document.querySelector('.message.ok').classList.remove('error');
         } else if (result.errors) {
             for (let error in result.errors) {

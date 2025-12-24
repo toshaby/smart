@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Enums\StatusEnum;
+use App\Http\Resources\CreateTicketResource;
 use App\Models\Customer;
 
 class WidgetService
@@ -22,19 +23,19 @@ class WidgetService
         };
         $arCustomerUpdate['name'] = $data['name'];
         $customer = Customer::updateOrCreate($arCustomerFind, $arCustomerUpdate);
-        
+
         $ticket = $customer->tickets()->create([
             'theme' => $data['theme'],
             'text' => $data['text'],
             'status' => StatusEnum::new
         ]);
-        
+
 
         if (isset($data['files'])) {
-            foreach($data['files'] as $file)
+            foreach ($data['files'] as $file)
                 $ticket->addMedia($file)->toMediaCollection();
         }
 
-        return ['success' => true, 'message' => 'Спасибо за отзыв'];
+        return new CreateTicketResource($ticket);
     }
 }

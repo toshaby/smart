@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTicketRequest;
 use App\Services\WidgetService;
-use Illuminate\Http\Request;
 
 class WidgetController extends Controller
 {

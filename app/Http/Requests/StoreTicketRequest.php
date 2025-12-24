@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class StoreTicketRequest extends FormRequest
 {
@@ -19,12 +21,12 @@ class StoreTicketRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules(Request $request): array
     {
         return [
             'name' => 'required|max:255',
-            'phone' => 'nullable|phone:E164|required_if:email,null',
-            'email' => 'nullable|email|required_if:phone,null',
+            'phone' => ['nullable', 'phone:E164', Rule::requiredIf(fn() => !$request->input('email'))],
+            'email' => ['nullable', 'email', Rule::requiredIf(fn() => !$request->input('phone'))],
             'theme' => 'required|max:32',
             'text' => 'required',
             'files' => 'array',
@@ -41,11 +43,11 @@ class StoreTicketRequest extends FormRequest
             ],
             'phone' => [
                 'phone' => 'Укажите правильный номер',
-                'required_if' => "Укажите телефон если не указан Email",
+                'required' => "Укажите телефон если не указан Email",
             ],
             'email' => [
                 'email' => 'Укажите правильный Email',
-                'required_if' => 'Укажите Email если не указан телефон'
+                'required' => 'Укажите Email если не указан телефон'
             ],
             'theme' => [
                 'required' => 'Укажите тему сообщения',

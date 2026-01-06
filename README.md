@@ -1,7 +1,7 @@
-Чтобы развернуть проект выполните след команды
+Чтобы развернуть проект выполните след команды, в пустой папке проекта.<br>
+При этом нужно настроить вебсервер DOCUMENT_ROOT на your_project/public<br>
 
-git clone https://github.com/toshaby/smart<br>
-cd smart
+git clone https://github.com/toshaby/smart.git .<br>
 
 composer install<br>
 npm install<br>
